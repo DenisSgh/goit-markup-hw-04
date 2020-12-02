@@ -44,6 +44,19 @@ img {
   display: block;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 /* Общая рамка */
 .container {
   margin-left: auto;
@@ -80,10 +93,14 @@ header {
 }
 
 /* Навигация */
+.container.navigation {
+  display: flex;
+  height: 80px;
+}
+
 .navigation {
   display: flex;
   align-items: center;
-  height: 80px;
 }
 
 .site-nav {
@@ -127,7 +144,19 @@ header {
 /* Герой */
 .hero {
   color: #ffffff;
-  background-color: #2f303a;
+  max-width: 1600px;
+  min-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url('../image/studio/bg-hero-img.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   letter-spacing: 0.06em;
   text-align: center;
   padding-top: 200px;
@@ -141,6 +170,8 @@ header {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
+  width: 675px;
+  margin: 0 auto 30px;
 }
 
 .hero a {
@@ -241,11 +272,15 @@ header {
   border-radius: 0px 0px 4px 4px;
 }
 
+.team-description {
+  padding: 30px 0px;
+  margin: 0 10px;
+}
+
 .team h3 {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
-  margin-top: 30px;
   margin-bottom: 10px;
 }
 
@@ -253,7 +288,6 @@ header {
   color: var(--secondary-text-color);
   font-size: 16px;
   line-height: 1.19;
-  margin-bottom: 30px;
 }
 
 /*! FOOTER */
@@ -264,10 +298,14 @@ footer {
   padding: 60px 0px;
 }
 
+address {
+  font-style: normal;
+  margin-top: 20px;
+}
+
 .contacts {
   font-size: 14px;
   line-height: 1.71;
-  margin-top: 20px;
 }
 
 .contacts .link-contacts {
@@ -331,9 +369,11 @@ footer {
   margin-bottom: 30px;
 }
 
-.content .item {
+.content .card-description {
   background: #ffffff;
   border: 1px solid #eeeeee;
+  border-top: 0px;
+  padding: 20px 24px;
   max-width: 370px;
 }
 
@@ -341,12 +381,11 @@ footer {
   letter-spacing: 0.06em;
   font-size: 18px;
   line-height: 2;
-  margin: 20px 0px 4px 24px;
+  margin-bottom: 4px;
 }
 
 .content .class {
   color: var(--secondary-text-color);
   font-size: 16px;
   line-height: 1.88;
-  margin: 0px 0px 20px 24px;
 }
